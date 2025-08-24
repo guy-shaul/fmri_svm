@@ -1,0 +1,7 @@
+# Data and results folders
+data/
+results/
+output/
+logs/
+*.log
+

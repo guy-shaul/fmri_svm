@@ -1,0 +1,17 @@
+{
+  "directory": "/Users/guyshaul/Desktop/fmri_svm/data",
+  "results_dir": "/Users/guyshaul/Desktop/fmri_svm/results",
+  "NET": "Vis",
+  "SUB_AREA": "NA",
+  "idx": 12,
+  "H": "LH",
+  "slice": "end",
+  "dur": 10,
+  "offset": 5,
+  "z_norm": false,
+  "is_rest": 0,
+  "kernel": "sigmoid",
+  "scale": true,
+  "k_folds": 5,
+  "force_run": false
+}
