@@ -39,17 +39,21 @@ Plots duration distribution of the 14 movies.
 
 ```json
 {
-  "NET": "Vis",              # Brain network 
-  "SUB_AREA": "NA",          # Sub-area
-  "idx": 17,                 # Region index
-  "H": "LH",                 # Hemisphere (LH/RH)
-  "slice": "end",            # Temporal slice (start/middle/end/all)
-  "dur": 10,                 # Duration in TR
-  "offset": 5,               # Offset from boundary
-  "is_rest": 0,              # 0=active, 1=rest
-  "z_norm": false,           # Z-score normalization
-  "kernel": "sigmoid",       # SVM kernel
-  "k_folds": 5              # Cross-validation folds
+  "directory": "/path/to/data",    # Data directory path
+  "results_dir": "/path/to/results", # Results output path
+  "NET": "Vis",                    # Brain network 
+  "SUB_AREA": "NA",                # Sub-area
+  "idx": 17,                       # Region index
+  "H": "LH",                       # Hemisphere (LH/RH)
+  "slice": "end",                  # Temporal slice (start/middle/end/all)
+  "dur": 10,                       # Duration in TR
+  "offset": 5,                     # Offset from boundary
+  "is_rest": 0,                    # 0=active, 1=rest
+  "z_norm": false,                 # Z-score normalization
+  "kernel": "sigmoid",             # SVM kernel
+  "scale": true,                   # Feature scaling
+  "k_folds": 5,                    # Cross-validation folds
+  "force_run": false              # Force recomputation of cached results
 }
 ```
 
