@@ -76,7 +76,7 @@ class SVMClassifier:
                     log.warning(f"Error in fold {fold}: {e}")
                     continue
 
-            log.info(f"Cross-validation results: Mean Accuracy: {np.mean(fold_accuracies):.3f} ± {np.std(fold_accuracies):.4f} | Best Fold Accuracy: {best_accuracy:.4f}")
+            log.info(f"Cross-validation results: Mean Accuracy: {np.mean(fold_accuracies):.3f} ± {np.std(fold_accuracies):.3f} | Best Fold Accuracy: {best_accuracy:.3f}")
 
             return fold_accuracies, fold_reports, best_conf_matrix, sum_conf_matrix
 

@@ -93,6 +93,10 @@ def plot_scores(config, output_dir, durs, scores):
     saturation_score = 0.95 * max_score
     saturation = next(d for d, score in zip(durs, scores) if score >= saturation_score)
 
+    # Optimization points
+    log.info(f"Optimal TR Durations: Elbow Point: {elbow} TR | 1st Derivative Drop: {first_derivative} TR"
+             f" | 2nd Derivative Drop: {second_point} TR | 95% Saturation: {saturation} TR")
+
     # Plot
     plt.figure(figsize=(12, 6))
     plt.plot(durs, scores, marker='o', label="Scores")
@@ -101,6 +105,7 @@ def plot_scores(config, output_dir, durs, scores):
     plt.axvline(second_point, color='orange', linestyle='--', label=f"Second Derivative: {second_point}")
     plt.axvline(saturation, color='red', linestyle='--', label=f"Saturation (95%): {saturation}")
     plt.title("Movie duration in training vs Model Accuracy")
+    plt.ylim([0,1])
     plt.xlabel("Duration [TR]")
     plt.ylabel("Accuracy")
     plt.legend()
@@ -108,12 +113,6 @@ def plot_scores(config, output_dir, durs, scores):
     plt.savefig(os.path.join(output_dir,f"{config["H"]}_{config["NET"]}_{config["SUB_AREA"]}_{config["idx"]}_{config["slice"]}_dur_{durs[0]}_{durs[-1]}"))
     plt.show()
 
-    # Print summary
-    print("\nOptimal TR Durations:")
-    print(f"  Elbow Point            : {elbow} TR")
-    print(f"  First Derivative Drop  : {first_derivative} TR")
-    print(f"  Second Derivative Min  : {second_point} TR")
-    print(f"  95% Saturation         : {saturation} TR")
 
 if __name__ == '__main__':
     config = load_config('tools/params_config.json')

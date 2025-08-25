@@ -17,6 +17,8 @@ def load_subject_data(data_vis_subject, movie, dur, slice, offset, z_norm):
     Returns:
         torch.Tensor or None
     """
+
+    # TODO: dur parameter to track and log for invalid cases
     try:
         movie_data = data_vis_subject[data_vis_subject['y'] == movie]
 
